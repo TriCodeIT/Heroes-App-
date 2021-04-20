@@ -36,7 +36,7 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>): RecyclerView.Adapt
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        var tvDetail: TextView = itemView.findViewById(R.id.tv_item__detail)
+        var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
         var imgPhoto:ImageView = itemView.findViewById(R.id.img_item_photo)
     }
 }
