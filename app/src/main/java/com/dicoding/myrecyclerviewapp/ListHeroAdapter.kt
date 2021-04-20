@@ -10,6 +10,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class ListHeroAdapter(private val listHero: ArrayList<Hero>): RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_hero, viewGroup, false)
@@ -27,6 +32,8 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>): RecyclerView.Adapt
 
         holder.tvName.text = hero.name
         holder.tvDetail.text = hero.detail
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
@@ -39,4 +46,9 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>): RecyclerView.Adapt
         var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
         var imgPhoto:ImageView = itemView.findViewById(R.id.img_item_photo)
     }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Hero)
+    }
+
 }

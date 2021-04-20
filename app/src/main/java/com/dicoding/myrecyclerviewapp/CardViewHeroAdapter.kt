@@ -33,7 +33,7 @@ class CardViewHeroAdapter (private val listHero: ArrayList<Hero>) : RecyclerView
 
         holder.btnShare.setOnClickListener { Toast.makeText(holder.itemView.context, "Share" + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
 
-        holder.itemView.setOnClickListener { Toast.makeText(holder.itemView.context, "Share" + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
+        holder.itemView.setOnClickListener { Toast.makeText(holder.itemView.context, "Kamu Memilih" + listHero[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
     }
 
     override fun getItemCount(): Int {
