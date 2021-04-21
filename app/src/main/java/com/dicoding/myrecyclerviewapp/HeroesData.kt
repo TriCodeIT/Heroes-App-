@@ -4,6 +4,7 @@ object HeroesData {
     private val heroNames = arrayOf(
         "Ahmad Dahlan",
         "Ahmad Yani",
+        "Sutomo",
         "Gatot Soebroto",
         "Ki Hadjar Dewantara",
         "Mohammad Hatta",
